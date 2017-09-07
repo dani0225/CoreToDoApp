@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,6 +39,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="ys7-cm-mxG" id="ggu-1t-InA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -50,13 +54,48 @@
                     <view key="view" contentMode="scaleToFill" id="ko2-LK-deY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your Task!" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1MQ-d4-g7a">
+                                <rect key="frame" x="125" y="84" width="125" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j7e-fT-Xx0">
+                                <rect key="frame" x="163" y="142" width="51" height="31"/>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zx6-vt-gcJ">
+                                <rect key="frame" x="140" y="208" width="80" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Add Task">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="5Fp-Pn-LD3" eventType="touchUpInside" id="qdm-Af-sw0"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="zx6-vt-gcJ" firstAttribute="firstBaseline" secondItem="j7e-fT-Xx0" secondAttribute="baseline" constant="60" id="0R7-K1-5wB"/>
+                            <constraint firstItem="1MQ-d4-g7a" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1rD-BU-GgO" secondAttribute="leading" id="6Hy-VO-RnQ"/>
+                            <constraint firstItem="zx6-vt-gcJ" firstAttribute="centerX" secondItem="j7e-fT-Xx0" secondAttribute="centerX" constant="-7.5" id="87X-pN-Rtr"/>
+                            <constraint firstItem="1rD-BU-GgO" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1MQ-d4-g7a" secondAttribute="trailing" id="HHE-w3-D8V"/>
+                            <constraint firstItem="j7e-fT-Xx0" firstAttribute="top" secondItem="1MQ-d4-g7a" secondAttribute="bottom" constant="28" id="L01-Ff-Vmr"/>
+                            <constraint firstItem="j7e-fT-Xx0" firstAttribute="centerX" secondItem="1MQ-d4-g7a" secondAttribute="centerX" id="afw-VW-W5d"/>
+                            <constraint firstItem="1MQ-d4-g7a" firstAttribute="centerX" secondItem="ko2-LK-deY" secondAttribute="centerX" id="k9M-im-Vd6"/>
+                            <constraint firstItem="1MQ-d4-g7a" firstAttribute="top" secondItem="1rD-BU-GgO" secondAttribute="top" constant="20" id="mhT-YE-Nxd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1rD-BU-GgO"/>
                     </view>
+                    <connections>
+                        <outlet property="isImportant" destination="j7e-fT-Xx0" id="bbI-Ws-iYm"/>
+                        <outlet property="textField" destination="1MQ-d4-g7a" id="KOQ-iV-vQp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g8z-30-MbU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1193" y="119"/>
+            <point key="canvasLocation" x="1192.8" y="118.29085457271366"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6YU-0E-aKU">
